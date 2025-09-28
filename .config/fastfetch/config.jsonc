@@ -1,0 +1,90 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/arch.png",
+    "type": "kitty-direct",
+    "height": 10,
+    "width": 30,
+    "padding": {
+      "top": 1
+    }
+  },
+  "display": {
+    "separator": " >  "
+  },
+  "modules": [
+    "break",
+    /*{
+            "type": "title",
+            "color": {
+                "user": "1",  // = color2
+                "at": "1",
+                "host": "1"
+            }
+        },*/
+    {
+      "type": "host",
+      "format": "{1} {2} by {5}",
+      "key": " ",
+      "keyColor": "96",
+    },
+    {
+      "type": "os",
+      "format": "{3}",
+      "key": "Distribution   ",
+      "keyColor": "96",
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel         ",
+      "format": "{1} {2} ({4})",
+      "keyColor": "96",
+    },
+    {
+      "type": "shell",
+      "key": "Unix shell     ",
+      "format": "{6} ({4})",
+      "keyColor": "96",
+    },
+    {
+      "type": "terminal",
+      "key": "Terminal       ",
+      "format": "{5} ({6})",
+      "keyColor": "96",
+    },
+    {
+      "type": "wm",
+      "format": "{2} ({5})",
+      "key": "Window manager ",
+      "keyColor": "96",
+    },
+    {
+      "type": "cpu",
+      "format": "{1} ({3}) @ {7} GHz",
+      "key": "CPU            ",
+      "keyColor": "96",
+    },
+    {
+      "type": "gpu",
+      "format": "{1} {2} ({3})",
+      "key": "GPU            ",
+      "keyColor": "96",
+    },
+    {
+      "type": "memory",
+      "key": "Memory         ",
+      "keyColor": "96",
+    },
+    {
+      "type": "disk",
+      "key": "Disk           ",
+      "keyColor": "96",
+    },
+    /*
+        "break", 
+        {
+            "type": "colors",
+            "symbol": "circle",
+        },*/
+  ]
+}
