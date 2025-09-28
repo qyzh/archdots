@@ -18,7 +18,6 @@
     // Modules Left
     "modules-left": [
       "hyprland/workspaces",
-    //  "group/quicklinks",
       "hyprland/window",
     ],
 
@@ -37,7 +36,5 @@
         "battery",
         "clock",
         "custom/exit"
-    // "custom/ml4w-welcome",
-
     ]
 }
