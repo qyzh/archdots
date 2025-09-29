@@ -8,7 +8,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "spacing": 0,
-
+"reload_style_on_change": true,
 
     // Load Modules
     "include": [
@@ -23,16 +23,15 @@
 
     // Modules Center
     "modules-center": [
-
+    "custom/recording",
     ],
 
     // Modules Right    
     "modules-right": [
-      "cpu",
-    "memory",
+        "group/tray-expander",
+        "cpu",
         "pulseaudio",
         "network",
-        "tray",
         "battery",
         "clock",
         "custom/exit"
