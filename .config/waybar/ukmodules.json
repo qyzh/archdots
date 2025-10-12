@@ -1,5 +1,5 @@
 {
-  "hyprland/workspaces": {
+  "hyprland/workspaces#14": {
     "on-click": "activate",
     "active-only": true,
     "all-outputs": true,
@@ -43,7 +43,12 @@
   },
   "cpu": {
     "interval": 5,
-    "on-click": "kitty -e htop",
+    "on-click": "kitty -e btop",
+    "format": " "
+  },
+  "cpu#2": {
+    "interval": 5,
+    "on-click": "kitty -e btop",
     "format": " "
   },
   "memory": {
@@ -57,6 +62,21 @@
     "path": "/",
     "on-click": "kitty -e htop"
   },
+  "temperature": {
+    "interval": 10,
+    "tooltip": true,
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon1/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp"
+    ],
+    "critical-threshold": 82,
+    "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "󰈸"
+    ],
+    "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
+  },
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
@@ -67,8 +87,9 @@
     "modules": [
       "custom/system",
       "disk",
-      "cpu",
-      "memory"
+      "cpu#2",
+      "memory",
+      "temperature"
     ]
   },
   "network": {
@@ -89,6 +110,17 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "kitty -e nmtui"
+  },
+  "network#14": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname}: via {gwaddr} \n<small>down/up:  {bandwidthDownBytes}   {bandwidthUpBytes}</small>",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnesso 󰌙",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 1,
+    "on-click-right": "kitty -e nmtui",
+    "max-length": 30
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -131,6 +163,30 @@
       "critical": 10
     }
   },
+  "battery#2": {
+    "states": {
+      "good": 75,
+      "warning": 35,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
   "pulseaudio": {
     "format": "{icon}",
     "on-click-right": "pamixer -t",
@@ -146,12 +202,56 @@
     },
     "on-click": "pavucontrol"
   },
+  "pulseaudio#2": {
+    "format": "{icon} {volume}%",
+    "tooltip": true,
+    "format-muted": "",
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " ",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
+  },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueman-manager"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "tooltip-format": "Luminosità",
+    "tooltip": true
   },
   "user": {
     "format": "{user}",

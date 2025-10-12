@@ -1,0 +1,103 @@
+{
+"custom/browser": {
+	"format": "󰰷 ",
+	"on-click": "xdg-open https://",
+	"tooltip": true,
+	"tooltip-format": "Launch Browser",
+},
+"custom/terminal": {
+	"format": " ",
+	"on-click": "$HOME/.config/hypr/scripts/WaybarScripts.sh --term",
+	"tooltip": true,
+	"tooltip-format": "Launch Terminal",
+},
+"custom/spotify": {
+	"format": " ",
+	"on-click": "~/.config/hypr/UserScripts/launch.sh spotify",
+	"tooltip": true,
+	"tooltip-format": "Launch Spotify",
+},
+"custom/nvim": {
+	"format": " ",
+	"on-click": "~/.config/hypr/UserScripts/launch.sh nvim",
+	"tooltip": true,
+	"tooltip-format": "Launch Neovim",
+},
+"custom/filemanager": {
+	"format": "󰝰 ",
+	"on-click": "$HOME/.config/hypr/scripts/WaybarScripts.sh --files",
+	"tooltip": true,
+	"tooltip-format": "Launch file manager",
+},
+"custom/discord": {
+	"format": " ",
+	"on-click": "~/.config/hypr/UserScripts/launch.sh discord",
+  "tooltip": true,
+	"tooltip-format": "Launch Discord",
+},
+"custom/chatgpt": {
+	"format": "󰚩 ",
+	"on-click": "xdg-open https://chatgpt.com/g/g-p-68bb970c35d081919bf4c3f8d6b2076f-linux/project",
+  "tooltip": true,
+	"tooltip-format": "Launch Chatgpt",
+},
+  "custom/user": {
+    "format": "󰣇",
+    "interval": 60,
+    "format-tooltip": " {user}\n {hostname}",
+
+  },
+  "custom/expand-icon#1": {
+    "format": "󰜬",
+    "tooltip": false
+  },
+  "custom/network#1": {
+    "format-wifi": "󱚸 {essid}({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname}: via {gwaddr} \n<small>down/up:  {bandwidthDownBytes}   {bandwidthUpBytes}</small>",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnesso 󰌙",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 1,
+    "on-click-right": "kitty -e nmtui",
+    "max-length": 30
+  },
+"custom/swaync": {
+	"tooltip": true,
+	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+	"format": "{icon}",
+	"format-icons": {
+		"notification": "",
+		"none": "",
+		"dnd-notification": "",
+		"dnd-none": "",
+		"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"inhibited-none": "",
+		"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-inhibited-none": ""
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+	"escape": true,
+},
+  "custom/power#14": {
+    "format": "⏻",
+	"on-click": "~/.config/hypr/UserScripts/ukpowermenu.sh",
+  "tooltip": true,
+	"tooltip-format": "Power Menu",
+},
+// Separatos
+"custom/separator#line": {
+	"format": "  ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank": {
+	"format": " ",
+	"interval": "once",
+	"tooltip": false
+},
+}

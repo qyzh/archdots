@@ -12,28 +12,38 @@
 
     // Load Modules
     "include": [
-        ".config/waybar/modules.json",
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/CModules",
+  "$HOME/.config/waybar/GModules",
+  "$HOME/.config/waybar/ukmodules.json",
+        "$HOME/.config/waybar/omarchyMod"
     ],
-
     // Modules Left
     "modules-left": [
-      "hyprland/workspaces",
+"hyprland/workspaces",
+"custom/filemanager",
+"custom/terminal",
+"custom/browser",
+"custom/nvim",
+"custom/spotify",
+"custom/discord",
+"custom/chatgpt",
       "hyprland/window",
     ],
 
     // Modules Center
     "modules-center": [
-    "custom/recording",
     ],
 
     // Modules Right    
     "modules-right": [
-        "group/tray-expander",
-        "cpu",
-        "pulseaudio",
-        "network",
-        "battery",
-        "clock",
-        "custom/exit"
+        "group/tray-expander#1",
+        "group/mobo_drawer",
+        "group/audio",
+        "network#1",
+        "group/laptop#1",
+        "clock#5",
+"custom/swaync",
+        "custom/power#14"
     ]
 }

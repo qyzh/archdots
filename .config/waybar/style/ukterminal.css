@@ -1,19 +1,28 @@
 * {
-  background-color: #000000;
-  /* color: #8a8a8d; */
   border: none;
   border-radius: 0;
-  min-height: 0;
-  font-family: Monaspace Argon NF;
-  font-size: 12px;
+  min-height: 35px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 100%;
+}
+
+window#waybar,
+window#waybar.empty,
+window#waybar.empty #window {
+  background-color: #121212;
+  padding: 0px;
+  border: 0px;
+}
+
+tooltip {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 80%;
 }
 
 .modules-left {
-  margin-left: 8px;
-}
-
-.modules-right {
-  margin-right: 8px;
+  margin-left: 10px;
 }
 
 #workspaces {
@@ -23,7 +32,8 @@
 }
 
 #workspaces button.active {
-  color: yellow;
+  color: #00c2ff;
+  opacity: 0.6;
 }
 
 #workspaces button {
@@ -39,48 +49,209 @@
   opacity: 0.5;
 }
 
+
+#custom-user,
+#custom-browser,
+#custom-terminal,
+#custom-filemanager,
+#custom-spotify,
+#custom-nvim,
+#custom-discord,
+#custom-chatgpt,
+#workspaces,
 #window {
-  color: yellow;
+  border-right: 1px solid #333;
+  padding: 0px 10px 0 10px;
 }
 
-#tray,
-#cpu,
-#battery,
+#tray-expander,
+#mobo_drawer,
+#audio,
 #network,
-#bluetooth,
-#pulseaudio,
-#custom-screenrecording-indicator,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
+#laptop,
+#clock,
+#custom-swaync,
+#custom-power {
+  border-left: 1px solid #333;
+  padding: 0px 10px 0 10px;
+}
+
+#custom-user {
+  color: #3a86ff;
+  padding-left: 5px;
+  padding-right: 20px;
+}
+
+#custom-browser,
+#custom-filemanager,
+#custom-spotify,
+#custom-nvim,
+#custom-discord,
+#custom-chatgpt,
+#custom-terminal {
+  color: #8a8a8d;
+  border-right: none;
+  padding-right: 5px;
+  opacity: 0.5;
+}
+
+#custom-browser:hover,
+#custom-filemanager:hover,
+#custom-spotify:hover,
+#custom-nvim:hover,
+#custom-discord:hover,
+#custom-chatgpt:hover,
+#custom-terminal:hover {
+  color: #f2f2f2;
+  border-right: none;
+  padding-right: 5px;
+}
+
+#custom-filemanager {
+  padding-left: 15px
+}
+
+#custom-chatgpt {
+  padding-right: 10px;
+  border-right: 1px solid #333;
+}
+
+#custom-chatgpt:hover {
+  padding-right: 10px;
+  color: #f2f2f2;
+  border-right: 1px solid #333;
+}
+
+#window {
+  color: #F2F7A1;
+  opacity: 0.8;
+  border-right: none;
+}
+
+#tray-expander {
+  border-left: none;
 }
 
 #custom-expand-icon {
-  margin-right: 7px;
+  padding-right: 5px;
 }
 
-tooltip {
-  padding: 2px;
+#mobo_drawer {
+  padding: 0
 }
 
-#custom-update {
-  font-size: 10px;
+#temperature,
+#cpu,
+#memory,
+#disk {
+  padding: 0 10px;
+}
+
+#temperature {
+  color: #FA812F;
+}
+
+#cpu {
+  color: #3396D3;
+  padding-left: 0;
+}
+
+#memory {
+  padding-left: 0;
+  color: #556B2F;
+}
+
+#disk {
+  color: #9A3F3F;
+  padding-left: 0;
+}
+
+#audio {
+  color: #8a8a8d;
+  padding-right: 0;
+}
+
+#audio.muted {
+  color: #dddddd;
+}
+
+#pulseaudio {
+  padding-right: 10px;
+}
+
+
+#pulseaudio.microphone.muted {
+  color: #777777;
+}
+
+#pulseaudio.microphone.muted,
+#pulseaudio.muted {
+  color: #555555;
+  padding-right: 10px;
+}
+
+#network {
+  color: #E5C95F;
+}
+
+#laptop {
+  padding-right: 0px;
+}
+
+#battery {
+  color: #5CB338;
+  padding-right: 10px;
+}
+
+#battery.discharging {
+  color: #59AC77;
+}
+
+#battery.critical {
+  color: #FF4500;
+  animation: blink 1s infinite;
+}
+
+#battery.critical.charging {
+  animation: none;
+  color: #FF4500;
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+}
+
+#backlight {
+  color: #DFD0B8;
+  padding-right: 10px;
+}
+
+#power-profiles-daemon {
+  padding-right: 10px;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #5CB338;
+}
+
+#power-profiles-daemon.balanced {
+  color: #DFD0B8;
+}
+
+#power-profiles-daemon.performance {
+  color: #C69749;
 }
 
 #clock {
-  margin-left: 8.75px;
+  color: #8a8a8d;
 }
 
-.hidden {
-  opacity: 0;
+#custom-swaync {
+  color: #9929EA;
+  padding-right: 15px;
 }
 
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
+#custom-power {
+  color: #FF4500;
+  padding-right: 10px;
 }

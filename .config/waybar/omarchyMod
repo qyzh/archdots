@@ -30,10 +30,11 @@
   },
   "custom/update": {
     "format": "",
+	"exec": "checkupdates | wc -l",
+	"exec-if": "[[ $(checkupdates | wc -l) ]]",
     "on-click": "~/.config/hypr/scripts/Distro_update.sh",
-    "tooltip-format": "Arch update",
-    "signal": 7,
-    "interval": 3600
+"tooltip-format": "Left Click: Update System\nArch (w/ notification)\nFedora, OpenSuse, Debian/Ubuntu click to update",
+    "interval":43200 
   },
   "cpu": {
     "interval": 5,

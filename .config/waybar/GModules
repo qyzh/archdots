@@ -1,0 +1,52 @@
+{
+  "group/laptop#1": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "battery",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "battery",
+        "backlight#2",
+        "power-profiles-daemon"
+        ]
+    },
+  "group/tray-expander#1": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon#1",
+      "tray"
+    ]
+  },
+"group/mobo_drawer": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "temperature",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"temperature",		
+		"cpu",
+		"memory",
+		"disk",
+	]
+},
+"group/audio": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "pulseaudio",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"pulseaudio",
+		"pulseaudio#microphone",
+	]
+},
+  }
