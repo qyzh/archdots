@@ -15,9 +15,6 @@ keymap.set("n", "<Leader>D", '"_D')
 keymap.set("v", "<Leader>d", '"_d')
 keymap.set("v", "<Leader>D", '"_D')
 
--- save file
-keymap.set("n", "<C-s>", ":w<CR>", opts)
-
 -- 3. Alt + j/k = geser baris
 keymap.set("n", "<A-j>", ":m .+1<CR>==")
 keymap.set("n", "<A-k>", ":m .-2<CR>==")
