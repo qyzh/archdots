@@ -1,8 +1,9 @@
 {
     // Load Modules
     "include": [
-        ".config/waybar/modules.json",
-        ".config/waybar/omarchymod.json"
+        ".config/waybar/Modules",
+        ".config/waybar/ukmodules.json",
+        ".config/waybar/omarchyMod"
     ],
 "reload_style_on_change": true,
   "layer": "top",

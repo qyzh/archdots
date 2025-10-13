@@ -12,12 +12,13 @@
 
     // Load Modules
     "include": [
-        ".config/waybar/modules.json",
+        ".config/waybar/ukmodules.json",
+        ".config/waybar/omarchymod.json"
     ],
 
     // Modules Left
     "modules-left": [
-      "hyprland/workspaces",
+      "hyprland/workspaces#14",
       "hyprland/window",
     ],
 
