@@ -87,14 +87,14 @@ return {
 				log_level = vim.log.levels.OFF,
 				text = {
 					workspace = function(opts)
-						local hour = tonumber(os.date("%H"))
-						local status = hour >= 22 and "🌙 Late night coding"
-							or hour >= 18 and "🌆 Evening session"
-							or hour >= 12 and "☀️ Afternoon coding"
-							or hour >= 5 and "🌅 Morning productivity"
-							or "🌙 Midnight hacking"
+						--[[ local hour = tonumber(os.date("%H")) ]]
+						-- local status = hour >= 22 and "🌙"
+						-- 	or hour >= 18 and "🌆"
+						-- 	or hour >= 12 and "☀️"
+						-- 	or hour >= 5 and "🌅"
+						-- 	or "🌙 Midnight hacking"
 
-						return string.format("%s: %s", status, opts.filename)
+						return string.format("%s: %s", opts.workspace, opts.filename)
 					end,
 				},
 				editor = {
@@ -104,7 +104,7 @@ return {
 				},
 				idle = {
 					details = function(opts)
-						return string.format("Taking a break from %s", opts.workspace)
+						return string.format("Ngopi heula %s", opts.workspace)
 					end,
 				},
 			})
